@@ -1,3 +1,5 @@
+package src;
+
 import java.text.DecimalFormat;
 
 public class SavingsAccount extends BankAccount {
@@ -5,8 +7,9 @@ public class SavingsAccount extends BankAccount {
     private float rate;
 
     public SavingsAccount(String accountName, String accountID, float rate){
+        super(accountName,accountID);
         accountName = super.getAccountName();
-        accountID = super.getAccountID();
+        accountID = super.getAccountNumber();
         setRate(rate);
     }
 
@@ -15,27 +18,24 @@ public class SavingsAccount extends BankAccount {
     }
 
     public void setRate(float rate){
-        if(rate < super.getLowRate()){
-            rate = super.getLowRate();
+        this.rate = rate;
 
-        }if(rate > super.getHighRate()){
-            rate = super.getHighRate();
-
-        }else{
-            rate = rate;
+        if(rate < getLowRate()){
+            this.rate = getLowRate();
+        }if(rate > getHighRate()){
+            this.rate = getHighRate();
         }
-
     }
-    public void addInterest(){
+    public float addInterest(){
         DecimalFormat df = new DecimalFormat("#.##");
         float addedInterest = (super.getBalance() / rate) * 100;
         df.format(addedInterest);
-        super.setBalance(addedInterest);
+        return getBalance() + addedInterest;
     }
 
     public void printDetails(){
-        System.out.println("Account Name: " + accountName);
-        System.out.println("Account ID: " + accountID);
+        System.out.println("Account Name: " + super.getAccountName());
+        System.out.println("Account ID: " + super.getAccountNumber());
         System.out.println("Balance: " + super.getBalance());
         System.out.println("Rate: " + rate + "%");
     }
