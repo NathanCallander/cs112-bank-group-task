@@ -18,16 +18,13 @@ public class SavingsAccount extends BankAccount {
     }
 
     public void setRate(float rate){
+        this.rate = rate;
+
         if(rate < getLowRate()){
-            rate = getLowRate();
-
+            this.rate = getLowRate();
         }if(rate > getHighRate()){
-            rate = getHighRate();
-
-        }else{
-            this.rate = rate;
+            this.rate = getHighRate();
         }
-
     }
     public float addInterest(){
         DecimalFormat df = new DecimalFormat("#.##");
