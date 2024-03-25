@@ -1,3 +1,5 @@
+package src;
+
 public abstract class BankAccount {
 
     // declare lowRate & highRate
