@@ -1,4 +1,6 @@
-package src;
+package src.src;
+
+import src.src.BankAccount;
 
 import java.text.DecimalFormat;
 
@@ -30,7 +32,7 @@ public class SavingsAccount extends BankAccount {
         DecimalFormat df = new DecimalFormat("#.##");
         float addedInterest = (super.getBalance() / rate) * 100;
         df.format(addedInterest);
-        return getBalance() + addedInterest;
+        return balance + addedInterest;
     }
 
     public void printDetails(){
