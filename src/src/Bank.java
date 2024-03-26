@@ -1,4 +1,3 @@
-import src.BankAccount;
 import src.SavingsAccount;
 
 import java.util.ArrayList;
@@ -46,15 +45,15 @@ public class Bank {
         }
     }
 
-    public void printAllCurrentAccounts() {
-        for(String id : idList) {
-            if(idAccountMap.containsKey(id)) {
-                if(idAccountMap.get(id) instanceof CurrentAccount) {
-                    idAccountMap.get(id).printDetails();
-                }
-            }
-        }
-    }
+//    public void printAllCurrentAccounts() {
+//        for(String id : idList) {
+//            if(idAccountMap.containsKey(id)) {
+//                if(idAccountMap.get(id) instanceof CurrentAccount) {
+//                    idAccountMap.get(id).printDetails();
+//                }
+//            }
+//        }
+//    }
 
 
 }
