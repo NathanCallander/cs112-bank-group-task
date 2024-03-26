@@ -49,10 +49,6 @@ public abstract class BankAccount {
         return balance;
     }
 
-    public void setBalance(float balance) {
-        this.balance = balance;
-    }
-
     public String getAccountName() {
         return accountName;
     }
