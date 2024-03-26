@@ -1,7 +1,4 @@
-package src;
-
 import org.junit.Test;
-import src.src.BankAccount;
 
 import static org.junit.Assert.assertEquals;
 

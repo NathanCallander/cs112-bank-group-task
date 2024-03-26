@@ -1,7 +1,3 @@
-package src.src;
-
-import src.src.BankAccount;
-
 import java.text.DecimalFormat;
 
 public class SavingsAccount extends BankAccount {
