@@ -1,5 +1,3 @@
-package src;
-
 public class SavingsAccount extends BankAccount {
 
     private float rate;
@@ -35,6 +33,7 @@ public class SavingsAccount extends BankAccount {
         System.out.println("Account Name: " + super.getAccountName());
         System.out.println("Account ID: " + super.getAccountNumber());
         System.out.println("Balance: " + super.getBalance());
+        System.out.println("Account type: Savings");
         System.out.println("Rate: " + rate + "%");
     }
 
