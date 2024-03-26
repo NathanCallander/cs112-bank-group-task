@@ -49,7 +49,18 @@ public class SavingsAccountTest {
         BankAccount.setHighRate(9f);
         BankAccount.setLowRate(1f);
         savingsAccount = new SavingsAccount("test","12345",6f);
+        savingsAccount.setBalance(4f);
         savingsAccount.addInterest();
-        assertEquals(10f,savingsAccount.addInterest(),0.0);
+        assertEquals(4.239999771118164f,savingsAccount.getBalance(), 0.0);
+    }
+
+    @Test
+    public void addInterestExtremeTest(){
+        BankAccount.setHighRate(9f);
+        BankAccount.setHighRate(1f);
+        savingsAccount = new SavingsAccount("test","12345",11f);
+        savingsAccount.setBalance(1000f);
+        savingsAccount.addInterest();
+        assertEquals(1010.0,savingsAccount.getBalance(), 0.0);
     }
 }

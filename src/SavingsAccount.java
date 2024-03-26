@@ -1,7 +1,5 @@
 package src;
 
-import java.text.DecimalFormat;
-
 public class SavingsAccount extends BankAccount {
 
     private float rate;
@@ -26,11 +24,11 @@ public class SavingsAccount extends BankAccount {
             this.rate = getHighRate();
         }
     }
-    public float addInterest(){
-        DecimalFormat df = new DecimalFormat("#.##");
-        float addedInterest = (super.getBalance() / rate) * 100;
-        df.format(addedInterest);
-        return getBalance() + addedInterest;
+    public void addInterest(){
+        float balance = super.getBalance();
+        float addedInterest = (balance * rate) / 100;
+        float total = balance + addedInterest;
+        super.setBalance(total);
     }
 
     public void printDetails(){
